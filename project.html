@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Term Project</title>
+   <script src="project.js" type="text/javascript" defer></script>
+   <style>
+        
+        *
+        {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: auto;
+            
+            padding: 10px;
+        }
+        header 
+        {
+            background-color: black;
+            color: white;
+            text-align: center;
+            
+        }
+        h1 
+        {    
+            font-size: 50px;
+        }
+
+        table 
+        {    
+            border-collapse: collapse;
+        }
+        th
+        {
+            background-color: black;
+            color: white;
+        }
+        th, td
+        {
+            border: 1px solid grey;
+            padding: 8px;
+        }
+        li
+        {
+            list-style-type: none;
+        }
+
+        #modal 
+        {
+            display: none;
+            position: fixed; 
+            z-index: 1;
+            top: 0;
+            left: 0; 
+            padding: 50px;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            color: white;
+        }
+        #modal-content
+        {
+            opacity: 1;
+            background-color: black;
+            margin-right: 30%;
+            border: 1px solid white;
+            width: 50%;
+            height: 90%;
+        }
+        #closemodal
+        {
+            float: right;
+            
+        }
+
+        #NHL
+        {
+            float: left;
+        }
+        #NBA
+        {
+            float: right;
+        }
+
+   </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sportle</h1>
+        <h3>The guessing game for the ultimate sports fans</h3>
+    </header>
+    
+    <main>
+        <input type="button" value="Generate a new mystery player" onclick="generateNewPlayer()">
+        <br>
+        <br>
+        <input type="text" placeholder="Enter an athletes name" id="guess">
+        <input type="button" value="Make your Guess" onclick="checkGuess()">
+        <br>
+        <br>
+        <input type="button" value="Test your skills" onclick="hardMode()"> Time Remaining: <span id="counting">unlimited</span>
+        
+        
+        <div>
+            <p id="guessRemaining">5 guesses remaining</p>
+         
+            <table id="guessTable">
+                <thead>
+                    <tr>
+                        <th>League</th>
+                        <th>Player Name</th>
+                        <th>Age</th>
+                        <th>Position</th>
+                        <th>Country</th>
+                    </tr>
+                </thead>
+               
+                <tbody id="guessTableBody">
+
+                </tbody>
+
+            </table>
+        </div>
+    </main>
+
+    <footer>
+        <ul> Leagues included:
+            <li>NHL</li>
+            <li>NBA</li>
+            <li>Premier League</li>
+        </ul>
+        <ul> Soon to be included: 
+            
+            <li>NFL</li>
+            
+        </ul>
+   
+        <button id="collapsible" onclick="openModal()"><h2>How To Play</h2></button>
+        <p>Guess the mystery player randomly chosen from the top 10 players in the PL, NBA and NHL</p>
+
+        <div id="modal">
+            <div id="modal-content">
+                <button id="closemodal" onclick="closeModal()">X</button>
+                <ul> 
+                    <li>A mystery player has been generated for you and you have to guess who it is</li>
+                    <li>You can click the "Generate a new mystery player" button to choose a new mystery player</li>
+                    <li>You have 5 guesses to guess the<b>last name</b>of the mystery player</li>
+                    <li>A<span style="color: green;">green field</span>in any field indicates a match to either the league/position/age/country of birth of the mystery player </li>
+                    <li>A<span style="color: red;">red field</span>indicates the mystery player is not from the same league, position, age, or country as the player guessed</li>
+                    <li><h3>List of Players included</h3></li>
+                    <ul id="NHL"> <b>NHL</b> 
+                        
+                    </ul>
+                    <ul id="NBA"> <b>NBA</b> 
+                        
+                    </ul>
+                    <ul id="PL"><b>Premier League</b> 
+
+                    </ul>
+                </ul>
+            </div> 
+
+        </div>
+    </footer>
+
+    
+
+
+
+</body>
+
+
+</html>
