@@ -49,4 +49,18 @@ cd HToorProjects.github.io
 
 Then open index.html in your browser.
 
-🧠 Example Gameplay
+TODO:
+1. Seperate the CSS and html code
+2. Add dropdown/autocomplete - Allow full name or partial match
+3. Switch from alerts to UI to show message on page of incorrect guesses
+4. Deploy live
+5. Move data of player list to JSON file and load from js
+6. Daily challenge player
+7. Save progress to local storage
+
+Potential Improvements/updates
+- Add autocomplete / dropdown for player guesses
+- Expand list of players (NFL, MLB, more leagues)
+- Implement mobile app
+- Add animations and transitions
+ - Deploy live version with custom domain
